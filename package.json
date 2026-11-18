@@ -16,6 +16,10 @@
     "react": "19.1.1",
     "react-dom": "19.1.1"
   },
+  "overrides": {
+    "motion-dom": "12.23.23",
+    "motion-utils": "12.23.6"
+  },
   "devDependencies": {
     "@tailwindcss/vite": "4.1.13",
     "@types/react": "19.1.12",
