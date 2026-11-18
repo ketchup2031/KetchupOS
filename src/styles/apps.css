@@ -1,0 +1,39 @@
+.welcome-app { flex: 1; display: flex; flex-direction: column; min-height: 0; overflow: auto; }
+.welcome-hero { min-height: 221px; flex-shrink: 0; position: relative; isolation: isolate; padding: 33px 29px 26px; overflow: hidden; border-bottom: 1px solid #ed6b7039; background: radial-gradient(ellipse at 83% 67%,#a5284399 0%,#6c1c3182 30%,transparent 63%), linear-gradient(120deg,#291920,#401c27 62%,#5a2435); color: #fff1f0; }
+.welcome-hero::after { content: ""; position: absolute; z-index: -1; inset: 0; opacity: .53; background-image: radial-gradient(#f689961d 1px,transparent 1px); background-size: 13px 13px; mask-image: linear-gradient(90deg,transparent 37%,black 80%); }
+.welcome-eyebrow { display: flex; align-items: center; gap: 7px; margin-bottom: 10px; font: 700 10px var(--mono); color: #ffb3bb; letter-spacing: .15em; }
+.welcome-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: #ff6168; box-shadow: 0 0 10px #ff525a; }
+.welcome-hero h1 { margin: 0; font-size: clamp(35px,4.2vw,57px); font-weight: 760; line-height: .99; letter-spacing: -.065em; }
+.welcome-hero h1 span { color: #ff6570; }
+.welcome-hero p { margin: 13px 0 0; max-width: 345px; color: #f3cdd8; font-size: 13px; }
+.welcome-mark { position: absolute; z-index: -1; top: 36px; right: 65px; width: 142px; height: 142px; display: grid; place-items: center; color: #ffa2a9; border: 1px solid #ff7b8999; border-radius: 28px; transform: rotate(-12deg); background: linear-gradient(145deg,#ff8e9a37,#79243575 80%); box-shadow: 0 0 36px #ff4e734c, inset 0 1px 0 #ffc4bf49; }
+.welcome-mark svg { filter: drop-shadow(0 0 10px #ff637ea0); }
+.welcome-orbit { position: absolute; z-index: -1; width: 255px; height: 255px; top: -20px; right: 9px; border: 1px solid #ff798d26; border-radius: 50%; }
+.welcome-orbit.orbit-inner { width: 219px; height: 219px; top: -2px; right: 27px; border-style: dashed; }
+.welcome-main { flex: 1; padding: 18px 25px 16px; }
+.welcome-main h2 { font-weight: 660; margin: 0 0 11px; font-size: 14px; }
+.quick-actions { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
+.quick-actions button { display: flex; gap: 8px; align-items: center; text-align: left; border: 1px solid var(--line); border-radius: 9px; background: var(--surface-2); padding: 8px; min-height: 62px; }
+.quick-actions button:hover { border-color: var(--line-strong); background: var(--raised); transform: translateY(-1px); }
+.quick-actions .app-tile { width: 34px; height: 34px; border-radius: 8px; }
+.quick-actions button > span:nth-child(2) { min-width: 0; flex: 1; }
+.quick-actions strong, .quick-actions small { display: block; line-height: 1.22; }
+.quick-actions strong { color: var(--text); font-size: 12px; }
+.quick-actions small { color: var(--muted); margin-top: 3px; font-size: 10px; }
+.quick-actions button > svg { color: var(--quiet); flex-shrink: 0; margin-left: auto; }
+.welcome-footer { display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; gap: 8px; min-height: 43px; border-top: 1px solid var(--line); padding: 6px 25px; color: var(--muted); font-size: 11px; }
+.welcome-footer > span, .welcome-footer button { display: flex; align-items: center; gap: 6px; }
+.welcome-footer > span svg { color: var(--accent-text); flex-shrink: 0; }
+.welcome-footer button { padding: 4px; flex-shrink: 0; }
+.welcome-footer button:hover { color: var(--text); }
+@container (max-width: 520px) {
+  .welcome-hero { padding: 26px 18px; min-height: 185px; }
+  .welcome-mark { right: 20px; top: 35px; transform: rotate(-12deg) scale(.76); transform-origin: top right; }
+  .welcome-orbit { display: none; }
+  .welcome-hero p { position: relative; max-width: 230px; }
+  .welcome-main { padding: 14px 13px; }
+  .quick-actions { grid-template-columns: 1fr; }
+  .quick-actions button { min-height: 49px; }
+  .welcome-footer { padding: 6px 11px; }
+}
+@container (max-width: 375px) { .welcome-mark { opacity: .37; right: 5px; } }

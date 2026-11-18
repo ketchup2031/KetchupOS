@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@import "./styles/shell.css";
+@import "./styles/apps.css";
+@import "./styles/components.css";
+
+:root {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 270px; background: #100e12; }
+button, input, textarea, select { font: inherit; }
+button:not(:disabled) { cursor: pointer; }
+button:disabled { opacity: .42; }
+button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+::selection { background: var(--accent); color: #150b0d; }
+:root { scrollbar-width: thin; scrollbar-color: #655259 transparent; }
+.desktop {
+  --text: #f5eef0; --muted: #b7a9b1; --quiet: #8d838d;
+  --surface: #19171c; --surface-2: #211e24; --raised: #28242c;
+  --line: #ffffff13; --line-strong: #ffffff26; --hover: #ffffff0d;
+  --glass: #1a171ddd; --accent-dim: color-mix(in srgb, var(--accent) 16%, transparent);
+  --accent-text: color-mix(in srgb, var(--accent) 65%, var(--text));
+  --mono: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+  color-scheme: dark;
+  color: var(--text); font-size: 14px;
+}
+.desktop[data-theme="light"] {
+  --text: #241a24; --muted: #51444e; --quiet: #70636c;
+  --surface: #fff6f7; --surface-2: #f7ecef; --raised: #f3e2e8;
+  --line: #36142d1c; --line-strong: #36142d36; --hover: #36142d0d;
+  --glass: #fff5f7ef; color-scheme: light;
+}
+.desktop[data-motion="false"] *, .desktop[data-motion="false"] *::before, .desktop[data-motion="false"] *::after { animation-duration: 0s !important; transition-duration: 0s !important; }
+@media (prefers-reduced-motion: reduce) {
+  .desktop *, .desktop *::before, .desktop *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
